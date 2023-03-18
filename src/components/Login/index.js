@@ -9,9 +9,7 @@ import {
   MainDiv,
   LeftContainer,
   FormContainer,
-  LogoDiv,
   InputDiv,
-  LogoImageEl,
   InputEl,
   ShowPasswordDiv,
   CheckboxEl,
@@ -21,7 +19,7 @@ import {
   ErrorMsgEl,
 } from './styledComponents'
 
-const nxtWatchLogo = `https://res.cloudinary.com/btejroop77/image/upload/v1678484847/NxtWatch/Group_3_ywx4m4.svg`
+//const nxtWatchLogo = `https://res.cloudinary.com/btejroop77/image/upload/v1678484847/NxtWatch/Group_3_ywx4m4.svg`
 
 class Login extends Component {
   state = {
@@ -49,7 +47,7 @@ class Login extends Component {
 
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
-    Cookies.set('jwt_token', jwtToken, {expires: 7, path: '/'})
+    Cookies.set('jwt_token', jwtToken, {expires: 30, path: '/'})
     history.replace('/')
   }
 
@@ -92,9 +90,6 @@ class Login extends Component {
       <MainDiv>
         <LeftContainer></LeftContainer>
         <FormContainer onSubmit={this.onSubmitForm}>
-          <LogoDiv>
-            <LogoImageEl src={nxtWatchLogo} alt="nxtwatch logo" />
-          </LogoDiv>
           <InputDiv>
             <InputEl
               placeholder="username"
@@ -135,3 +130,11 @@ class Login extends Component {
 }
 
 export default Login
+
+/*<LogoDiv>
+            <LogoImageEl src={nxtWatchLogo} alt="nxtwatch logo" />
+          </LogoDiv>
+          
+       LogoImageEl, 
+         LogoDiv,    
+          */
